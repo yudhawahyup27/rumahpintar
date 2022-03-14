@@ -1,5 +1,3 @@
-<?= $this->Extend('/templates/auth'); ?>
-<?= $this->section('content'); ?>
 <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5 col-lg-7 mx-auto">
@@ -11,7 +9,7 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user" method="POST" action="<?= base_url('auth/register') ?>">
+                        <form class="user" method="POST" action="<?= base_url('auth/registration') ?>">
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Full Name">
                             </div>
@@ -44,5 +42,3 @@
     </div>
 
 </div>
-
-<?= $this->endsection(); ?>

@@ -1,5 +1,3 @@
-<?= $this->Extend('/templates/auth'); ?>
-<?= $this->section('content'); ?>
 <div class="container">
 
     <!-- Outer Row -->
@@ -46,4 +44,3 @@
 
 
 </div>
-<?= $this->endsection(); ?>
