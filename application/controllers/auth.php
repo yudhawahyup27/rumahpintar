@@ -10,7 +10,7 @@ class auth extends CI_Controller
     }
     public function index()
     {
-        $data['$title'] = "Rumah Pintar Login";
+        $data[$title] = "Rumah Pintar Login";
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/login');
         $this->load->view('templates/auth_footer');
