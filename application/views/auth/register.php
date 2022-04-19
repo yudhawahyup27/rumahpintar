@@ -9,9 +9,10 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user" method="POST" action="<?= base_url('auth/registration') ?>">
+                        <form class="user" method="POST" action="<?= base_url('auth/register') ?>">
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Full Name">
+                               <small class="text-danger"><?= form_error('name') ?></small> 
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address">
