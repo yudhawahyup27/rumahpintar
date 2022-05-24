@@ -8,4 +8,9 @@ class index extends CI_Controller
         $data['title'] = "Rumah Pintar";
         $this->load->view('Home/index', $data);
     }
+
+    public function control()
+    {
+        $this->load->view('control/web');
+    }
 }
