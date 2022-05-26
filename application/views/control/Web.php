@@ -3,6 +3,9 @@
 
 <head>
     <!-- Required meta tags -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -74,6 +77,17 @@
                 .always(function() {});
 
         });
+    </script>
+
+    <script type='text/javascript'>
+        var now = new Date();
+        var hours = now.getHours();
+        if (hours >= 5 && hours <= 6) {
+            document.write("Selamat Pagi Tuan, Sekarang Sudah Pagi Apakah Lampu Sudah dimatikan ");
+
+        } else if (hours >= 17 && hours <= 18) {
+            document.write("Selamat Sore Tuan, Sekarang Sudah Pagi Apakah Lampu Sudah Dinyalakan");
+        }
     </script>
 </body>
 
