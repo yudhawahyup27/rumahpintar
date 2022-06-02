@@ -5,7 +5,7 @@ class index extends CI_Controller
 {
     public function index()
     {
-        $data['title'] = "Rumah Pintar";
+        $data['title'] = 'Rumahpintar';
         $this->load->view('Home/index', $data);
     }
 

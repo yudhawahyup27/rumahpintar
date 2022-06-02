@@ -1,23 +1,5 @@
-<!doctype html>
-<html>
+<div class="container-fluid">
 
-<head>
-    <!-- Required meta tags -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="  <?= base_url(); ?>/asset/control/css/bootstrap.min.css">
-    <link rel="stylesheet" href=" <?= base_url(); ?>/asset/control/css/bootstrap-toggle.min.css">
-    <link rel="stylesheet" href=" <?= base_url(); ?>/asset/control/css/style.css">
-
-    <title>Ini Control Lampu</title>
-</head>
-
-<body>
 
     <div class="container mt-4">
         <div class="row">
@@ -51,44 +33,12 @@
             </div>
         </div>
     </div>
+    <div id="myAlert" class="alert alert-danger">
+        <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Selamat Pagi Tuan, Hari Sudah Pagi Jangan Lupa Matikan Lampu
+    </div>
+</div>
+<!-- /.container-fluid -->
 
-    <script src=" <?= base_url(); ?>/asset/control/js/jquery.min.js"></script>
-    <script src=" <?= base_url(); ?>/asset/control/js/bootstrap.min.js"></script>
-    <script src=" <?= base_url(); ?>/asset/control/js/bootstrap-toggle.min.js"></script>
-    <script type="text/javascript">
-        $(".pin").change(function(e) {
-            host = "http://" + $("#host").val() + "/";
-            pin = $(this).val();
-            state = this.checked ? 1 : 0;
-
-            var data = new FormData();
-            data.append('pin', pin);
-            data.append('state', state);
-
-            $.ajax({
-                    url: host + 'setpin',
-                    type: 'POST',
-                    dataType: 'html',
-                    data: data,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                })
-                .always(function() {});
-
-        });
-    </script>
-
-    <script type='text/javascript'>
-        var now = new Date();
-        var hours = now.getHours();
-        if (hours >= 5 && hours <= 6) {
-            document.write("Selamat Pagi Tuan, Sekarang Sudah Pagi Apakah Lampu Sudah dimatikan ");
-
-        } else if (hours >= 17 && hours <= 18) {
-            document.write("Selamat Sore Tuan, Sekarang Sudah Pagi Apakah Lampu Sudah Dinyalakan");
-        }
-    </script>
-</body>
-
-</html>
+</div>
+<!-- End of Main Content -->

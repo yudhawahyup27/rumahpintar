@@ -34,8 +34,8 @@ class auth extends CI_Controller
         );
 
         if ($this->form_validation->run() == false) {
-            $nama['$title'] = "Rumah Pintar Login";
-            $this->load->view('templates/auth_header', $nama);
+            $data['$title'] = 'Rumah Pintar Login';
+            $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login');
             $this->load->view('templates/auth_footer');
         } else {
@@ -59,7 +59,11 @@ class auth extends CI_Controller
 
                     ];
                     $this->session->set_userdata($data);
-                    redirect('/User');
+                    if ($user['role_id'] == 1) {
+                        redirect('/admin');
+                    } else {
+                        redirect('/User');
+                    }
                 } else {
                     $this->session->set_flashdata('message', '  
             <div class= "alert alert-danger" role="alert">Password Salah Ya Bunda</div>');
@@ -136,7 +140,7 @@ class auth extends CI_Controller
                 // htmlspecialchars('email' =>  $this->input->post('email')),
                 'name' => $this->input->post('name'),
                 'email' =>  $this->input->post('email'),
-                'image' => 'default.jpg',
+                'image' => 'default.svg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => 2,
                 'date_created' => time(),
@@ -156,6 +160,6 @@ class auth extends CI_Controller
         $this->session->set_flashdata('message', '  
             <div class= "alert alert-succcess" role="alert">Terima Kasih Telah Berkunjung Bunda See You</div>');
 
-        redirect('');
+        redirect('/auth/login');
     }
 }
