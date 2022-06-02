@@ -48,4 +48,15 @@ class menu extends CI_Controller
         $this->load->view('control/web', $data);
         $this->load->view('templates/footer', $data);
     }
+    public function submenu()
+    {
+        $data['title'] = 'Submenu';
+        $data['user'] =  $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['submenu'] = $this->db->get('user_sub_menu')->result_array();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('menu/submenu', $data);
+        $this->load->view('templates/footer', $data);
+    }
 }
