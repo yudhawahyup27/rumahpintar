@@ -53,10 +53,30 @@ class menu extends CI_Controller
         $data['title'] = 'Submenu';
         $data['user'] =  $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['submenu'] = $this->db->get('user_sub_menu')->result_array();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('menu/submenu', $data);
-        $this->load->view('templates/footer', $data);
+        $data['menu'] = $this->db->get('user_menu')->result_array();
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('icon', 'Menu', 'required');
+        $this->form_validation->set_rules('url', 'Menu', 'required');
+        $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+
+        if ($this->form_validation->run() == false) {
+            # code...
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('menu/submenu', $data);
+            $this->load->view('templates/footer', $data);
+        } else {
+            $data = [
+                'title' => $this->input->post('title'),
+                'menu_id' => $this->input->post('menu_id'),
+                'url' => $this->input->post('url'),
+                'icon' => $this->input->post('icon'),
+                'is_active' => $this->input->post('is_active')
+            ];
+            $this->db->insert('user_sub_menu', $data);
+            redirect('menu/submenu');
+        }
     }
 }

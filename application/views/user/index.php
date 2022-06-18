@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?= $user['name']; ?></h5>
                     <p class="card-text"><?= $user['email']; ?></p>
-                    <p class="card-text"><small class="text-muted">Menjadi member<?= $user['date_created']; ?></small></p>
+                    <p class="card-text"><small class="text-muted">Menjadi member <?= date('Y-m-d', $user['date_created']); ?></small></p>
                 </div>
             </div>
         </div>

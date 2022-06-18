@@ -3,9 +3,9 @@
 
      <!-- Sidebar - Brand -->
      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-         <!-- <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div> -->
+         <div class="sidebar-brand-icon rotate-n-15">
+             <i class="fas fa-laugh-wink"></i>
+         </div>
          <div class="sidebar-brand-text mx-3">Rumah Pintar</div>
      </a>
      <!-- Divider -->
@@ -59,7 +59,7 @@
 
          <li class="nav-item">
              <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
-                 <i class="fas fa-fw fa-log-out"></i>
+                 <i class="fas fa-fw fa-sign-out-alt"></i>
                  <span>Log Out</span></a>
          </li>
          <!-- Nav Item - Pages Collapse Menu -->
