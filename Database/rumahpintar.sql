@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 04:32 AM
+-- Generation Time: Jun 19, 2022 at 07:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -37,6 +37,14 @@ CREATE TABLE `user` (
   `date_created` int(11) NOT NULL,
   `is_active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `role_id`, `password`, `email`, `image`, `date_created`, `is_active`) VALUES
+(5, 'admin', 2, '$2y$10$7aqSscB6NWrBhvH1o6KKo.AHtzIhtcPfRCtnZV4nx4UeSwg7HDluO', 'admin@admin.com', 'default.svg', 1655616069, 1),
+(6, 'user', 2, '$2y$10$.K.sUXkW2mVv2v8mAX5TL.x4HTXp4EDAAfRnsROzmjldoGvFJLIXS', 'user@user.com', 'default.svg', 1655616117, 1);
 
 -- --------------------------------------------------------
 
@@ -168,7 +176,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
