@@ -7,8 +7,8 @@ Judul: Web Rumah Pintar (IOT)
 
 Admin Login
 Email : admin@admin.com
-Password : admin123456
+Password : admin1234
 
 User Login
-Email : user@gmail.com
-Password : user123456
+Email : user@user.com
+Password : user1234
